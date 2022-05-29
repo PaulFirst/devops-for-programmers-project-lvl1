@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: npm test
+    command: bash -c 'sleep 10 && npm test'
     image: "paulfirst/devops-for-programmers-project-lvl1_app_1:latest"
     depends_on: 
       - db
@@ -20,3 +20,9 @@ services:
       POSTGRES_USER: postgres
     ports:
       - "5432:5432"
+    volumes: 
+      - db:/var/lib/postgresql/data
+      
+volumes:
+  db:
+    driver: local
