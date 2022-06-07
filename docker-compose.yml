@@ -9,7 +9,8 @@ services:
     command: npm test
     image: "paulfirst/devops-for-programmers-project-lvl1_app_1:latest"
     depends_on: 
-      - db
+      db:
+        condition: service_healthy
     environment:
       - DATABASE_NAME=postgres
       - DATABASE_USERNAME=postgres
