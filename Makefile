@@ -5,7 +5,8 @@ ci:
 build:
 	docker-compose -f docker-compose.yml build app
 
-up:
+
+updev:
 	docker-compose up
 	
 down:
