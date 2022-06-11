@@ -16,7 +16,7 @@ services:
       DATABASE_HOST: ${DATABASE_HOST}
 
   db:
-    image: postgres
+    image: postgres:14.3
     user: postgres
     environment:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
